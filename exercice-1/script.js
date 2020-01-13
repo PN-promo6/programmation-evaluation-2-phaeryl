@@ -6,28 +6,48 @@ let fishList = [
 ];
 
 function displayArray(array) {
+    array.unshift(["Ordre", "Famille", "Nom vernaculaire", "Nom binomial"]);
+    let headerData = array[0];
     let table = document.createElement("table");
-    document.body.appendChild(table)
+    document.body.appendChild(table);
+    table.style.border="1px solid black";
+    let tableHeader = document.createElement("thead");
+    table.appendChild(tableHeader);
     let tableBody = document.createElement("tbody");
     table.appendChild(tableBody);
+    let tableHeaderRow = document.createElement("tr");
+    tableHeader.appendChild(tableHeaderRow);
     let i = 0;
-    let currentElement;
-    while (i < array.length) {
-        currentElement = array[i];
+    let j=1;
+    
+    while (i < headerData.length) {
+        let currentElement=headerData[i];
+        let tableHeaderCell= document.createElement("th");
+        tableHeaderRow.appendChild(tableHeaderCell);
+        tableHeaderCell.textContent=currentElement;
+        tableHeaderCell.style.color="red";
+        i++;
+        }
+
+    while (j <array.length){
+        let currentElement2=array[j];
         let tableBodyRow = document.createElement("tr");
         tableBody.appendChild(tableBodyRow);
-        i++;
-        let j = 0;
-        while (j < currentElement.length) {
+        j++; 
+        let k=0;
+
+        while (k < currentElement2.length) {
             let tableBodyCell = document.createElement("td");
-            tableBodyCell.textContent = currentElement[j];
             tableBodyRow.appendChild(tableBodyCell);
-            if (currentElement[j] == currentElement[3]) {
+            tableBodyCell.textContent=currentElement2[k];
+            if (currentElement2[k] == currentElement2[3])
+            {
                 tableBodyCell.style.fontStyle="italic";
             }
-            j++;
+            k++;            
         }
-    }
 
+    }
 }
 displayArray(fishList);
+
