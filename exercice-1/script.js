@@ -20,6 +20,7 @@ function displayArray(array) {
     let i = 0;
     let j = 1;
 
+    // Loop for table header elements
     while (i < headerData.length) {
         let currentElement = headerData[i];
         let tableHeaderCell = document.createElement("th");
@@ -28,14 +29,15 @@ function displayArray(array) {
         tableHeaderCell.style.color = "red";
         i++;
     }
-
+    // Loop for table body rows
     while (j < array.length) {
         let currentElement2 = array[j];
         let tableBodyRow = document.createElement("tr");
         tableBody.appendChild(tableBodyRow);
         j++;
         let k = 0;
-
+        
+        // Loop for table body elements
         while (k < currentElement2.length) {
             let tableBodyCell = document.createElement("td");
             tableBodyRow.appendChild(tableBodyCell);
