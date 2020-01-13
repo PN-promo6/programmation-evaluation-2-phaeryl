@@ -1,4 +1,4 @@
-let arrayString: string[] = ["foo", "bar", "baz", "qux", "quux", "corge", "grault"];
+let arrayString: string[] = ["foo", "bar", "bar", "baz", "qux", "quux", "corge", "grault"];
 function isSingle (array: string[], stringIsSingle: string): boolean {
     let i: number=0;
     let j: number=0;
@@ -12,7 +12,7 @@ function isSingle (array: string[], stringIsSingle: string): boolean {
         }
         i++;
     }
-    if(j > 1) {
+    if (j > 1) {
         isSingle = false;
     }
     // isSingle = true, even if the string doesn't appear in array.
