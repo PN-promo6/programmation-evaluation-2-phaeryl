@@ -36,7 +36,7 @@ function displayArray(array) {
         tableBody.appendChild(tableBodyRow);
         j++;
         let k = 0;
-        
+
         // Loop for table body elements
         while (k < currentElement2.length) {
             let tableBodyCell = document.createElement("td");
@@ -49,5 +49,6 @@ function displayArray(array) {
         }
 
     }
+    return;
 }
 displayArray(fishList);
